@@ -3,7 +3,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-// Custom exception for invalid tasks
+
 class InvalidTaskException extends IllegalArgumentException {
     public InvalidTaskException(String message) {
         super(message);
