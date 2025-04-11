@@ -12,7 +12,6 @@ class InvalidTaskException extends IllegalArgumentException {
 
 public class TaskManager {
 
-    // Adds a task to the list (handles invalid tasks)
     public void addTask(List<String> tasks, String task) {
         if (task == null || task.trim().isEmpty()) {
             throw new InvalidTaskException("Invalid task: Task cannot be null or empty.");
@@ -21,13 +20,11 @@ public class TaskManager {
         System.out.println("Task added: " + task);
     }
 
-    // Sorts the tasks in alphabetical order
     public void sortTasks(List<String> tasks) {
         Collections.sort(tasks);
         System.out.println("Tasks sorted: " + tasks);
     }
 
-    // Searches for a specific task and returns its index
     public int searchTask(List<String> tasks, String target) {
         int index = tasks.indexOf(target);
         if (index == -1) {
@@ -38,7 +35,6 @@ public class TaskManager {
         return index;
     }
 
-    // Removes a task from the list
     public void removeTask(List<String> tasks, String task) {
         if (!tasks.remove(task)) {
             throw new InvalidTaskException("Task not found: " + task);
@@ -46,7 +42,6 @@ public class TaskManager {
         System.out.println("Task removed: " + task);
     }
 
-    // Returns the longest task in the list
     public String findLongestTask(List<String> tasks) {
         if (tasks.isEmpty()) {
             throw new InvalidTaskException("No tasks available to find the longest task.");
@@ -61,7 +56,6 @@ public class TaskManager {
         return longest;
     }
 
-    // Returns the task at a specific index (handles IndexOutOfBoundsException)
     public String getTask(List<String> tasks, int index) {
         try {
             String task = tasks.get(index);
